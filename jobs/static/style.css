@@ -1,0 +1,86 @@
+.main-layout-transparent {
+    background: url('images/transparent.jpg') center / cover;
+}
+
+.main-layout-transparent .mdl-layout__header,
+.main-layout-transparent .mdl-layout__drawer-button {
+    /* This background is dark, so we set text to white. Use 87% black instead if
+       your background is light. */
+    color: white;
+}
+
+.mdl-layout-title {
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
+.container {
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        padding-top: 60px;
+    }
+}
+
+.job-card {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.job-card .mdl-card__title {
+    color: #fff;
+    height: 144px;
+    background: url('images/astronaut.jpg') top / cover;
+}
+
+.job-card .mdl-card__title-text {
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
+.job-card > .mdl-card__menu {
+    color: #fff;
+}
+
+.job-card .job-prop {
+    vertical-align: middle;
+    margin-right: 10px;
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
+.job-card .material-icons {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.job-detail-card {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.job-detail-card .mdl-card-main__title {
+    color: #fff;
+    height: 144px;
+    background: url('images/astronaut.jpg') top / cover;
+}
+
+.job-detail-card .mdl-card__title-text {
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
+.job-detail-card .job-detail-text {
+    margin-left: 20px;
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
+.fab-button {
+    position: fixed;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}

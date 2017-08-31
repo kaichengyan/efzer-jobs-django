@@ -1,0 +1,32 @@
+{% extends 'jobs/base.html' %}
+{% block content %}
+    {% if job_list %}
+        {% for job in job_list %}
+            <div class="job-card mdl-card mdl-shadow--2dp" onclick="window.location='{% url 'jobs:detail' job.id %}';">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text"> {{ job.company }} </h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <span class="job-prop"> <i class="material-icons">pin_drop</i> {{ job.location }} </span>
+                    <span class="job-prop"> <i class="material-icons">work</i> {{ job.job_position }} </span>
+                    <span class="job-prop"> <i class="material-icons">domain</i> {{ job.department }} </span>
+                </div>
+{#                <div class="mdl-card__menu">#}
+{#                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">#}
+{#                        <i class="material-icons">share</i>#}
+{#                    </button>#}
+{#                </div>#}
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="job-card mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text"> No job information available. </h2>
+            </div>
+        </div>
+    {% endif %}
+    <!-- Colored FAB button with ripple -->
+    <button class="fab-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+      <i class="material-icons">add</i>
+    </button>
+{% endblock %}

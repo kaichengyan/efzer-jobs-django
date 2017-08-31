@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'mdl/material.css' %}">
+    <script src="{% static 'mdl/material.js' %}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>EFZer Jobs</title>
+</head>
+<body>
+    <div class="main-layout-transparent mdl-layout mdl-js-layout">
+                <header class="mdl-layout__header mdl-layout__header--transparent">
+                    <div class="mdl-layout__header-row">
+                        <span class="mdl-layout-title">二附中校友招</span>
+                        <div class="mdl-layout-spacer"></div>
+                        <nav class="mdl-navigation">
+                            <a class="mdl-navigation__link" href="">Link</a>
+                            <a class="mdl-navigation__link" href="">Link</a>
+                            <a class="mdl-navigation__link" href="">Link</a>
+                            <a class="mdl-navigation__link" href="">Link</a>
+                        </nav>
+                    </div>
+                </header>
+                <div class="mdl-layout__drawer">
+                    <span class="mdl-layout-title">二附中校友招</span>
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link" href="">Link</a>
+                        <a class="mdl-navigation__link" href="">Link</a>
+                        <a class="mdl-navigation__link" href="">Link</a>
+                        <a class="mdl-navigation__link" href="">Link</a>
+                    </nav>
+                </div>
+                <main class="mdl-layout__content">
+                    <div class="container">
+                    {% block content %}
+
+                    {% endblock %}
+                    </div>
+                </main>
+            </div>
+</body>
+</html>
