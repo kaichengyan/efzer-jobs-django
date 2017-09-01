@@ -1,17 +1,19 @@
 {% extends 'jobs/base.html' %}
 {% block content %}
-    <div class="job-card mdl-card mdl-shadow--2dp">
-        <div class="mdl-card-main__title mdl-card__title">
-            <h2 class="mdl-card__title-text"> {{ jobinfo.company }} </h2>
+    <div class="job-card job-card-more mdc-card">
+        <div class="mdc-card__media">
+            <h2 class="mdc-card__title mdc-card__title--large"> {{ jobinfo.company }} </h2>
         </div>
-        <div class="mdl-card__supporting-text">
+        <div class="mdc-card__supporting-text">
             <p>
                 <span class="job-prop"> <i class="material-icons">pin_drop</i> {{ jobinfo.location }} </span>
                 <span class="job-prop"> <i class="material-icons">work</i> {{ jobinfo.job_position }} </span>
                 <span class="job-prop"> <i class="material-icons">domain</i> {{ jobinfo.department }} </span>
                 <span class="job-prop"> <i class="material-icons">remove_red_eye</i> 已被查看 {{ jobinfo.times_viewed}} 次 </span>
             </p>
-            <span class="job-prop"> <i class="material-icons">schedule</i> 由 {{ jobinfo.publisher }} 发布于 {{ jobinfo.date_published.date }} </span>
+            <p>
+                <span class="job-prop"> <i class="material-icons">schedule</i> 由 {{ jobinfo.publisher }} 发布于 {{ jobinfo.date_published.date }} </span>
+            </p>
         </div>
     </div>
     {#    <div class="mdl-card__menu">#}
@@ -19,36 +21,76 @@
     {#            <i class="material-icons">share</i>#}
     {#        </button>#}
     {#    </div>#}
-    <div class="job-detail-card mdl-card mdl-shadow--2dp">
+    <div class="job-detail-card mdc-card">
 
-        <div class="job-detail-title mdl-card__title mdl-card__title">
-            <h2 class="mdl-card__title-text">工作详情</h2>
-        </div>
-        <div class="job-detail-text mdl-card__supporting-text">
-            {{ jobinfo.description }}
+        <div class="mdc-card__primary">
+            <h1 class="mdc-card__title mdc-card__title--large">简历投递方式</h1>
         </div>
 
-        <div class="job-detail-title mdl-card__title mdl-card__title">
-            <h2 class="mdl-card__title-text">工作要求</h2>
-        </div>
-        <div class="job-detail-text mdl-card__supporting-text">
-            {{ jobinfo.requirements }}
+        <div class="job-detail-text mdc-card__supporting-text">
+            <p>{{ jobinfo.submitting_resume }}</p>
         </div>
 
-        <div class="job-detail-title mdl-card__title mdl-card__title">
-            <h2 class="mdl-card__title-text">简历投递方式</h2>
-        </div>
-        <div class="job-detail-text mdl-card__supporting-text">
-            {{ jobinfo.submitting_resume }}
+        {% if jobinfo.description != "" %}
+        <div class="mdc-card__primary">
+            <h1 class="mdc-card__title mdc-card__title--large">工作详情</h1>
         </div>
 
+        <div class="job-detail-text mdc-card__supporting-text">
+            <p>{{ jobinfo.description }}</p>
+        </div>
+        {% endif %}
 
-        <div class="job-detail-title mdl-card__title mdl-card__title">
-            <h2 class="mdl-card__title-text">公司介绍</h2>
+        {% if jobinfo.requirements != "" %}
+        <div class="mdc-card__primary">
+            <h1 class="mdc-card__title mdc-card__title--large">工作要求</h1>
         </div>
-        <div class="job-detail-text mdl-card__supporting-text">
-            {{ jobinfo.company_description }}
+
+        <div class="job-detail-text mdc-card__supporting-text">
+            <p>{{ jobinfo.requirements }}</p>
         </div>
+        {% endif %}
+
+        {% if jobinfo.company_description != "" %}
+        <div class="mdc-card__primary">
+            <h1 class="mdc-card__title mdc-card__title--large">公司介绍</h1>
+        </div>
+
+        <div class="job-detail-text mdc-card__supporting-text">
+            <p>{{ jobinfo.company_description }}</p>
+        </div>
+        {% endif %}
+
+
+{##}
+{#        <div class="job-detail-title mdl-card__title mdl-card__title">#}
+{#            <h2 class="mdl-card__title-text">工作详情</h2>#}
+{#        </div>#}
+{#        <div class="job-detail-text mdl-card__supporting-text">#}
+{#            {{ jobinfo.description }}#}
+{#        </div>#}
+{##}
+{#        <div class="job-detail-title mdl-card__title mdl-card__title">#}
+{#            <h2 class="mdl-card__title-text">工作要求</h2>#}
+{#        </div>#}
+{#        <div class="job-detail-text mdl-card__supporting-text">#}
+{#            {{ jobinfo.requirements }}#}
+{#        </div>#}
+{##}
+{#        <div class="job-detail-title mdl-card__title mdl-card__title">#}
+{#            <h2 class="mdl-card__title-text">简历投递方式</h2>#}
+{#        </div>#}
+{#        <div class="job-detail-text mdl-card__supporting-text">#}
+{#            {{ jobinfo.submitting_resume }}#}
+{#        </div>#}
+{##}
+{##}
+{#        <div class="job-detail-title mdl-card__title mdl-card__title">#}
+{#            <h2 class="mdl-card__title-text">公司介绍</h2>#}
+{#        </div>#}
+{#        <div class="job-detail-text mdl-card__supporting-text">#}
+{#            {{ jobinfo.company_description }}#}
+{#        </div>#}
 
     </div>
 {% endblock %}

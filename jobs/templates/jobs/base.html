@@ -4,42 +4,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="{% static 'mdl/material.css' %}">
     <script src="{% static 'mdl/material.js' %}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'material-components-web.min.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}"/>
-    <title>EFZer Jobs</title>
-</head>
-<body>
-    <div class="main-layout-transparent mdl-layout mdl-js-layout">
-                <header class="mdl-layout__header mdl-layout__header--transparent">
-                    <div class="mdl-layout__header-row">
-                        <span class="mdl-layout-title">二附中校友招</span>
-                        <div class="mdl-layout-spacer"></div>
-                        <nav class="mdl-navigation">
-                            <a class="mdl-navigation__link" href="">Link</a>
-                            <a class="mdl-navigation__link" href="">Link</a>
-                            <a class="mdl-navigation__link" href="">Link</a>
-                            <a class="mdl-navigation__link" href="">Link</a>
-                        </nav>
-                    </div>
-                </header>
-                <div class="mdl-layout__drawer">
-                    <span class="mdl-layout-title">二附中校友招</span>
-                    <nav class="mdl-navigation">
-                        <a class="mdl-navigation__link" href="">Link</a>
-                        <a class="mdl-navigation__link" href="">Link</a>
-                        <a class="mdl-navigation__link" href="">Link</a>
-                        <a class="mdl-navigation__link" href="">Link</a>
-                    </nav>
-                </div>
-                <main class="mdl-layout__content">
-                    <div class="container">
-                    {% block content %}
 
-                    {% endblock %}
-                    </div>
-                </main>
-            </div>
+    <title>EFZer Jobs</title>
+
+    <style>
+      :root {
+          --mdc-theme-primary: #311B92;
+          --mdc-theme-secondary: #E91E63;
+      }
+    </style>
+
+</head>
+
+<body class="mdc-typography">
+<header class="mdc-toolbar">
+    <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+            <a href="/jobs" class="material-icons mdc-toolbar__icon--menu">home</a>
+            <span class="mdc-toolbar__title">EFZer 校友招</span>
+        </section>
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+          <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Search" alt="Search">search</a>
+        </section>
+    </div>
+</header>
+
+<main>
+        <div class="container">
+            {% block content %}
+
+
+            {% endblock %}
+        </div>
+</main>
+
+{##}
+{#    <div class="main-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">#}
+{#        <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">#}
+{#            <div class="mdl-layout__header-row">#}
+{#                <span class="mdl-layout-title">二附中校友招</span>#}
+{#                <div class="mdl-layout-spacer"></div>#}
+{#                <nav class="mdl-navigation">#}
+{#                    <a class="mdl-navigation__link" href="">Link</a>#}
+{#                    <a class="mdl-navigation__link" href="">Link</a>#}
+{#                    <a class="mdl-navigation__link" href="">Link</a>#}
+{#                </nav>#}
+{#            </div>#}
+{#        </header>#}
+{#        <div class="mdl-layout__drawer">#}
+{#            <span class="mdl-layout-title">二附中校友招</span>#}
+{#            <nav class="mdl-navigation">#}
+{#                <a class="mdl-navigation__link" href="">Link</a>#}
+{#                <a class="mdl-navigation__link" href="">Link</a>#}
+{#                <a class="mdl-navigation__link" href="">Link</a>#}
+{#            </nav>#}
+{#        </div>#}
+{#        <main class="mdl-layout__content">#}
+{#            <div class="container">#}
+{#            {% block content %}#}
+{##}
+{#            {% endblock %}#}
+{#            </div>#}
+{#        </main>#}
+{#    </div>#}
+
+<script src="{% static 'material-components-web.js' %}"></script>
+<script>window.mdc.autoInit();</script>
+
 </body>
 </html>

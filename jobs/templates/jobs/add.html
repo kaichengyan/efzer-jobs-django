@@ -1,1 +1,65 @@
 {% extends 'jobs/base.html' %}
+{% block content %}
+<div class="add-job-panel mdc-card">
+    <div class="mdc-card__primary">
+        <h1 class="mdc-card__title mdc-card__title--large">添加职位信息</h1>
+    </div>
+    <div class="add-job-form">
+        <form name="add-job-form" action="{% url 'jobs:action_add' %}" method="post">
+            {% csrf_token %}
+
+            <div class="mdc-textfield mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                <input required class="mdc-textfield__input" type="text" id="company" name="company"/>
+                <label class="mdc-textfield__label" for="company">工作单位</label>
+            </div>
+            <div class="mdc-textfield mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                <input required class="mdc-textfield__input" type="text" id="location" name="location"/>
+                <label class="mdc-textfield__label" for="location">工作城市</label>
+            </div>
+
+            <div class="mdc-textfield mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                <input required class="mdc-textfield__input" type="text" id="job_position" name="job_position"/>
+                <label class="mdc-textfield__label" for="job_position">职位</label>
+            </div>
+
+            <div class="mdc-textfield mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                <input required class="mdc-textfield__input" type="text" id="department" name="department"/>
+                <label class="mdc-textfield__label" for="department">部门</label>
+            </div>
+
+            <div class="mdc-textfield mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                <input required class="mdc-textfield__input" type="text" id="publisher" name="publisher"/>
+                <label class="mdc-textfield__label" for="publisher">发布者</label>
+            </div>
+
+            <div class="mdc-textfield mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                <input required class="mdc-textfield__input" type="text" id="submitting_resume" name="submitting_resume" />
+                <label class="mdc-textfield__label" for="submitting_resume">简历投递方式</label>
+            </div>
+
+            <div class="mdc-textfield mdc-textfield--multiline mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                <textarea class="mdc-textfield__input" type="text" rows="6" id="description" name="description" maxlength="1000"></textarea>
+                <label class="mdc-textfield__label" for="description">工作描述</label>
+            </div>
+
+            <div class="mdc-textfield mdc-textfield--multiline mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield" maxlength="1000">
+                <textarea class="mdc-textfield__input" type="text" rows="6" id="requirements" name="requirements" ></textarea>
+                <label class="mdc-textfield__label" for="requirements">要求</label>
+            </div>
+
+            <div class="mdc-textfield mdc-textfield--multiline mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                <textarea class="mdc-textfield__input" type="text" rows="8" id="company_description" name="company_description" maxlength="2000"></textarea>
+                <label class="mdc-textfield__label" for="company_description">单位介绍</label>
+            </div>
+
+            <button type="submit" class="mdc-fab material-icons" aria-label="Submit">
+                <span class="mdc-fab__icon">
+                    send
+                </span>
+            </button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

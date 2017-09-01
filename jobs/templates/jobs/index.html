@@ -2,14 +2,19 @@
 {% block content %}
     {% if job_list %}
         {% for job in job_list %}
-            <div class="job-card mdl-card mdl-shadow--2dp" onclick="window.location='{% url 'jobs:detail' job.id %}';">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text"> {{ job.company }} </h2>
+            <div class="job-card mdc-card" onclick="window.location='{% url 'jobs:detail' job.id %}';">
+                <div class="mdc-card__media">
+                    <h1 class="mdc-card__title mdc-card__title--large">{{ job.company }}</h1>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    <span class="job-prop"> <i class="material-icons">pin_drop</i> {{ job.location }} </span>
-                    <span class="job-prop"> <i class="material-icons">work</i> {{ job.job_position }} </span>
-                    <span class="job-prop"> <i class="material-icons">domain</i> {{ job.department }} </span>
+{#                <div class="mdl-card__title">#}
+{#                    <h2 class="mdl-card__title-text"> {{ job.company }} </h2>#}
+{#                </div>#}
+                <div class="mdc-card__supporting-text">
+                    <p>
+                        <span class="job-prop"> <i class="material-icons">pin_drop</i> {{ job.location }} </span>
+                        <span class="job-prop"> <i class="material-icons">work</i> {{ job.job_position }} </span>
+                        <span class="job-prop"> <i class="material-icons">domain</i> {{ job.department }} </span>
+                    </p>
                 </div>
 {#                <div class="mdl-card__menu">#}
 {#                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">#}
@@ -19,14 +24,22 @@
             </div>
         {% endfor %}
     {% else %}
-        <div class="job-card mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text"> No job information available. </h2>
+        <div class="job-card mdc-card">
+            <div class="mdc-card__primary">
+                <h2 class="mdc-card__title"> 暂无招聘信息。 </h2>
             </div>
         </div>
     {% endif %}
-    <!-- Colored FAB button with ripple -->
-    <button class="fab-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-      <i class="material-icons">add</i>
+    <button class="mdc-fab material-icons" onclick="window.location='{% url 'jobs:add' %}'" aria-label="Add">
+        <span class="mdc-fab__icon">
+            add
+        </span>
     </button>
+
+    {% if snackbar_message %}
+        <div id="mdc-js-snackbar" class="mdc-snackbar demo-hidden mdc-snackbar--active" aria-live="assertive" aria-atomic="true">
+            <div class="mdc-snackbar__text">{{ snackbar_message }}</div>
+        </div>
+    {% endif %}
+
 {% endblock %}
