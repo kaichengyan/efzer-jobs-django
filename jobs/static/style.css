@@ -51,6 +51,12 @@ body {
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 800px) {
+    .job-detail-card {
+        margin-bottom: 10px;
+    }
+}
+
 .job-card .mdc-card__media {
     color: #fff;
     height: 100px;
