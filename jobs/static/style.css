@@ -98,6 +98,7 @@ body {
 @media screen and (max-width: 800px) {
     .job-detail-card {
         padding: 10px;
+        margin-bottom: 10px;
     }
 }
 
