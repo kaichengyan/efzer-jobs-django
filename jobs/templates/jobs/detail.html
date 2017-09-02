@@ -1,20 +1,8 @@
 {% extends 'jobs/base.html' %}
 
-{% block navbar %}
-
-<header class="mdc-toolbar">
-    <div class="mdc-toolbar__row">
-        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-            <a href="/jobs" class="material-icons mdc-toolbar__icon--menu">home</a>
-            <span class="mdc-toolbar__title">EFZer 校友招</span>
-        </section>
-        <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+{% block toolbar %}
 {#          <a href="{% url 'jobs:update' job.id %}" class="material-icons mdc-toolbar__icon" aria-label="Edit" alt="Edit">mode_edit</a>#}
 {#          <a href="{% url 'jobs:delete' job.id %}" class="material-icons mdc-toolbar__icon" aria-label="Delete" alt="Delete">delete</a>#}
-        </section>
-    </div>
-</header>
-
 {% endblock %}
 
 
@@ -54,35 +42,42 @@
             <p>{{ job.submitting_resume }}</p>
         </div>
 
-        {% if job.description != "" %}
-        <div class="mdc-card__primary">
-            <h1 class="mdc-card__title mdc-card__title--large">工作详情</h1>
-        </div>
-
-        <div class="job-detail-text mdc-card__supporting-text">
-            <p>{{ job.description }}</p>
-        </div>
-        {% endif %}
-
-        {% if job.requirements != "" %}
-        <div class="mdc-card__primary">
-            <h1 class="mdc-card__title mdc-card__title--large">工作要求</h1>
-        </div>
-
-        <div class="job-detail-text mdc-card__supporting-text">
-            <p>{{ job.requirements }}</p>
-        </div>
-        {% endif %}
-
-        {% if job.company_description != "" %}
-        <div class="mdc-card__primary">
-            <h1 class="mdc-card__title mdc-card__title--large">公司介绍</h1>
-        </div>
-
-        <div class="job-detail-text mdc-card__supporting-text">
-            <p>{{ job.company_description }}</p>
-        </div>
-        {% endif %}
-
     </div>
+
+    {% if job.description != "" %}
+        <div class="job-detail-card mdc-card">
+            <div class="mdc-card__primary">
+                <h1 class="mdc-card__title mdc-card__title--large">工作详情</h1>
+            </div>
+            <div class="job-detail-text mdc-card__supporting-text">
+                <p>{{ job.description }}</p>
+            </div>
+
+        </div>
+    {% endif %}
+
+    {% if job.requirements != "" %}
+        <div class="job-detail-card mdc-card">
+            <div class="mdc-card__primary">
+                <h1 class="mdc-card__title mdc-card__title--large">工作要求</h1>
+            </div>
+
+            <div class="job-detail-text mdc-card__supporting-text">
+                <p>{{ job.requirements }}</p>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if job.company_description != "" %}
+        <div class="job-detail-card mdc-card">
+            <div class="mdc-card__primary">
+                <h1 class="mdc-card__title mdc-card__title--large">公司介绍</h1>
+            </div>
+
+            <div class="job-detail-text mdc-card__supporting-text">
+                <p>{{ job.company_description }}</p>
+            </div>
+        </div>
+    {% endif %}
+
 {% endblock %}
