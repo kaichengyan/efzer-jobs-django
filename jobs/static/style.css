@@ -123,6 +123,35 @@ body {
     margin-top: 30px !important;
 }
 
+.login-panel {
+    width: 100%;
+    padding: 20px;
+}
+
+.login-panel .mdc-textfield {
+    display: block;
+    width: 100%;
+}
+
+.login-job-panel .mdc-textfield--multiline {
+    margin-top: 30px !important;
+}
+
+.login-panel .login-form {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
+.delete-confirm-card {
+    padding: 20px;
+}
+
+.delete-confirm-card button {
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
 .mdc-fab {
     position: fixed;
     margin-right: 30px;
