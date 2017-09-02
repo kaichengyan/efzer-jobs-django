@@ -17,6 +17,16 @@ body {
     background: #E0E0E0;
 }
 
+.container {
+    margin: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        margin: 10px;
+    }
+}
+
 /*.mdc-toolbar__row:first-child::after {*/
     /*background-size: cover;*/
     /*background: url("images/transparent.jpg") center;*/
@@ -30,9 +40,6 @@ body {
     background: white;
 }
 
-.container {
-    margin: 30px;
-}
 
 .no-job-card {
     padding: 20px;
@@ -88,6 +95,12 @@ body {
     padding: 20px;
 }
 
+@media screen and (max-width: 800px) {
+    .job-detail-card {
+        padding: 10px;
+    }
+}
+
 .job-detail-card .mdl-card-main__title {
     color: #fff;
     height: 144px;
@@ -102,6 +115,13 @@ body {
     margin-top: 10px;
     margin-left: 20px;
     font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+    .job-detail-card .job-detail-text {
+        margin-left: 0;
+        margin-top: 5px;
+    }
 }
 
 .add-job-panel {
@@ -164,4 +184,11 @@ body {
     bottom: 0;
     right: 0;
     z-index: 2;
+}
+
+@media screen and (max-width: 800px) {
+    .mdc-fab {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
 }
