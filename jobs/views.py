@@ -36,6 +36,7 @@ class JobDetailView(generic.DetailView):
 class AddJobView(generic.CreateView):
     model = Job
     form_class = JobForm
+    success_url = reverse_lazy('jobs:index')
 
 
 class UpdateJobView(generic.UpdateView):
