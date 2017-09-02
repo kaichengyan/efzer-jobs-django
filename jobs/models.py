@@ -8,7 +8,7 @@ from django.utils.encoding import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class Job(models.Model):
-    published = models.BooleanField(default=True)
+    published = models.BooleanField(default=False)
     date_published = models.DateTimeField(default=timezone.now)
     times_viewed = models.IntegerField(default=0)
 

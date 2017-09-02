@@ -34,6 +34,11 @@ body {
     margin: 30px;
 }
 
+.no-job-card {
+    padding: 20px;
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
 .job-card {
     width: 100%;
     margin-bottom: 20px;
