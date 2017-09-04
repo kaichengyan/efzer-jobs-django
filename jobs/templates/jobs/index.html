@@ -1,6 +1,7 @@
 {% extends 'jobs/base.html' %}
 
 {% block toolbar %}
+    <a href="{% url 'jobs:add' %}" class="material-icons mdc-toolbar__icon" aria-label="Add" alt="Add">add</a>
     <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Search" alt="Search">search</a>
 {% endblock %}
 
@@ -37,11 +38,11 @@
             </div>
         </div>
     {% endif %}
-    <button class="mdc-fab material-icons" onclick="window.location='{% url 'jobs:add' %}'" aria-label="Add">
-        <span class="mdc-fab__icon">
-            add
-        </span>
-    </button>
+{#    <button class="mdc-fab material-icons" onclick="window.location='{% url 'jobs:add' %}'" aria-label="Add">#}
+{#        <span class="mdc-fab__icon">#}
+{#            add#}
+{#        </span>#}
+{#    </button>#}
 
     {% if snackbar_message %}
         <div id="mdc-js-snackbar" class="mdc-snackbar demo-hidden mdc-snackbar--active" aria-live="assertive" aria-atomic="true">

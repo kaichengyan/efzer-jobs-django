@@ -10,7 +10,6 @@
     <div class="add-job-form">
         <form name="add-job-form" action="" method="post">
             {% csrf_token %}
-
             {% for field in form %}
                 <div class="mdc-textfield {% if field.name == "description" or field.name == "requirements" or field.name == "company_description"%}mdc-textfield--multiline{% endif %} mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
                     {{ field }}
