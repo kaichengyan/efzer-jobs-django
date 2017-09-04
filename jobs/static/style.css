@@ -1,18 +1,3 @@
-/*.main-layout-transparent {*/
-    /*background: url('images/transparent.jpg') center / cover;*/
-/*}*/
-
-/*.main-layout-transparent .mdl-layout__header,*/
-/*.main-layout-transparent .mdl-layout__drawer-button {*/
-    /*!* This background is dark, so we set text to white. Use 87% black instead if*/
-       /*your background is light. *!*/
-    /*color: white;*/
-/*}*/
-
-/*.mdl-layout-title {*/
-    /*font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;*/
-/*}*/
-
 body {
     background: #E0E0E0;
 }
@@ -27,11 +12,6 @@ body {
     }
 }
 
-/*.mdc-toolbar__row:first-child::after {*/
-    /*background-size: cover;*/
-    /*background: url("images/transparent.jpg") center;*/
-/*}*/
-
 .mdc-toolbar .mdc-toolbar__title {
     font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif !important;
 }
@@ -39,7 +19,6 @@ body {
 .mdc-card {
     background: white;
 }
-
 
 .no-job-card {
     padding: 20px;
