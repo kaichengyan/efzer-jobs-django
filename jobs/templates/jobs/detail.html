@@ -21,7 +21,9 @@
                 <span class="job-prop"> <i class="material-icons">remove_red_eye</i> 已被查看 {{ job.times_viewed}} 次 </span>
             </p>
             <p>
-                <span class="job-prop"> <i class="material-icons">schedule</i> 由 {{ job.publisher }} 发布于 {{ job.date_published.date }} </span>
+                <span class="job-prop"> <i class="material-icons">schedule</i>
+                    由 {{ job.get_publisher_grad_year }} 届 {{ job.get_publisher_grad_class }} 班
+                    {{ job.publisher }} 发布于 {{ job.date_published.date }} </span>
             </p>
         </div>
     </div>

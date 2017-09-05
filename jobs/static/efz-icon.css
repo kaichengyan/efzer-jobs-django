@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'efz-icon';
+  src:  url('fonts/efz-icon.eot?o2vw1q');
+  src:  url('fonts/efz-icon.eot?o2vw1q#iefix') format('embedded-opentype'),
+    url('fonts/efz-icon.ttf?o2vw1q') format('truetype'),
+    url('fonts/efz-icon.woff?o2vw1q') format('woff'),
+    url('fonts/efz-icon.svg?o2vw1q#efz-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i.icon-efz {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'efz-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-efz:before {
+  content: "\e900";
+}

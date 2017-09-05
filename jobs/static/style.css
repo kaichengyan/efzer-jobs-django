@@ -38,8 +38,8 @@ body {
 
 .job-card .mdc-card__media {
     color: #fff;
-    height: 100px;
-    background: url('images/astronaut.jpg') top / cover;
+    height: 150px;
+    background: url('images/bamboo.jpg') center / cover;
 }
 
 .job-card .mdc-card__title {
@@ -87,16 +87,6 @@ body {
     }
 }
 
-.job-detail-card .mdl-card-main__title {
-    color: #fff;
-    height: 144px;
-    background: url('images/astronaut.jpg') top / cover;
-}
-
-.job-detail-card .mdl-card__title-text {
-    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
-}
-
 .job-detail-card .job-detail-text {
     margin-top: 10px;
     margin-left: 20px;
@@ -131,9 +121,24 @@ body {
     font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
 }
 
+.add-job-panel .mdc-form-field {
+    display: inline-block;
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: inherit;
+}
+
+.add-job-panel .mdc-form-field .mdc-radio {
+    vertical-align: middle;
+}
+
 .add-job-panel .mdc-textfield {
-    display: block;
     width: 100%;
+}
+
+.add-job-panel .mdc-textfield input {
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
 }
 
 .add-job-panel .mdc-textfield--multiline {

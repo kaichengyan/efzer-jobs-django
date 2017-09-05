@@ -9,6 +9,8 @@
     <script src="{% static 'mdl/material.js' %}"></script>
 {#    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">#}
     <link rel="stylesheet" href="{% static 'material-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'efz-icon.css' %}">
+
     <link rel="stylesheet" href="{% static 'material-components-web.min.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}"/>
 
@@ -16,7 +18,7 @@
 
     <style>
       :root {
-          --mdc-theme-primary: #311B92;
+          --mdc-theme-primary: #D50000;
           --mdc-theme-secondary: #E91E63;
       }
     </style>
@@ -27,10 +29,11 @@
 
 {% block navbar %}
 
-<header class="mdc-toolbar">
+<header class="mdc-toolbar mdc-elevation--z8">
     <div class="mdc-toolbar__row">
         <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-{#            <a href="/jobs" class="material-icons mdc-toolbar__icon--menu">home</a>#}
+            <a href="/jobs" class="material-icons mdc-toolbar__icon--menu"><i class="icon-efz"></i></a>
+
             <span class="mdc-toolbar__title" onclick="window.location='{% url 'jobs:index' %}'">EFZer 校友招</span>
         </section>
         <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">

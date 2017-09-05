@@ -12,7 +12,7 @@
         {% for job in job_list %}
             <div class="job-card mdc-card" onclick="window.location='{% url 'jobs:detail' job.id %}';">
                 <div class="mdc-card__media">
-                    <h1 class="mdc-card__title mdc-card__title--large">{{ job.company }}</h1>
+                    <h1 class="mdc-card__title mdc-card__title--large">{{ job.company }} {{ job.job_position }}</h1>
                 </div>
 {#                <div class="mdl-card__title">#}
 {#                    <h2 class="mdl-card__title-text"> {{ job.company }} </h2>#}
@@ -20,8 +20,10 @@
                 <div class="mdc-card__supporting-text">
                     <p>
                         <span class="job-prop"> <i class="material-icons">pin_drop</i> {{ job.location }} </span>
-                        <span class="job-prop"> <i class="material-icons">work</i> {{ job.job_position }} </span>
+{#                        <span class="job-prop"> <i class="material-icons">work</i> {{ job.job_position }} </span>#}
+                        <span class="job-prop"> <i class="material-icons">perm_contact_calendar</i> {{ job.get_type_display }} </span>
                         <span class="job-prop"> <i class="material-icons">domain</i> {{ job.department }} </span>
+                        <span class="job-prop"> <i class="material-icons">payment</i> {{ job.salary }} </span>
                     </p>
                 </div>
 {#                <div class="mdl-card__menu">#}

@@ -11,16 +11,42 @@
         <form name="add-job-form" action="" method="post">
             {% csrf_token %}
             {% for field in form %}
-                <div class="mdc-textfield {% if field.name == "description" or field.name == "requirements" or field.name == "company_description"%}mdc-textfield--multiline{% endif %} mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
-                    {{ field }}
-                    <label class="mdc-textfield__label" for="id_{{ field.name }}">{{ field.label }}</label>
-                </div>
+                    {% if field.name == "type" %}
+                        {% for choice in field %}
+                            <div class="mdc-form-field">
+                                <div class="mdc-radio">
+                                    {{ choice.tag }}
+                                    <div class="mdc-radio__background">
+                                        <div class="mdc-radio__outer-circle"></div>
+                                        <div class="mdc-radio__inner-circle"></div>
+                                    </div>
+                                </div>
+                                <label for="{{ choice.id_for_label }}" id="{{ choice.id_for_label }}-label">{{ choice.choice_label }}</label>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="mdc-textfield {% if field.errors %}mdc-textfield--invalid{% endif %}{% if field.name == "description" or field.name == "requirements" or field.name == "company_description"%}mdc-textfield--multiline{% endif %} mdc-textfield--upgraded" data-mdc-auto-init="MDCTextfield">
+                            {{ field }}
+                            <label class="mdc-textfield__label" for="id_{{ field.name }}">{{ field.label }}</label>
+                        </div>
+                        {% if field.errors %}
+                            {% for error in field.errors %}
+                                <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" style="display: block;" aria-hidden="false">
+                                    {{ error }}
+                                </p>
+                            {% endfor %}
+                        {% else %}
+                            {% if field.help_text %}
+                            <p class="mdc-textfield-helptext" aria-hidden="true">
+                                {{ field.help_text }}
+                            </p>
+                                {% endif %}
+                        {% endif %}
+                    {% endif %}
             {% endfor %}
 
             <button type="submit" class="mdc-fab material-icons" aria-label="Submit">
-                <span class="mdc-fab__icon">
-                    send
-                </span>
+                <span class="mdc-fab__icon">send</span>
             </button>
 
         </form>
