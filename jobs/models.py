@@ -77,7 +77,7 @@ class Job(models.Model):
     department = models.CharField(
         max_length=50,
         help_text=_('如 “人力资源部”'),
-        verbose_name=_('职位部门')
+        verbose_name=_('工作部门')
     )
 
     publisher_class = models.SmallIntegerField(
@@ -108,7 +108,7 @@ class Job(models.Model):
     description = models.CharField(
         max_length=300,
         blank=True,
-        verbose_name=_('职位描述')
+        verbose_name=_('工作描述')
     )
 
     requirements = models.CharField(
@@ -120,7 +120,7 @@ class Job(models.Model):
     company_description = models.CharField(
         max_length=2000,
         blank=True,
-        verbose_name=_('公司简介')
+        verbose_name=_('单位介绍')
     )
 
     def __str__(self):

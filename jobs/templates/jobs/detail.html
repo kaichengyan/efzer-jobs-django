@@ -1,5 +1,5 @@
 {% extends 'jobs/base.html' %}
-
+{% load i18n %}
 {% block toolbar %}
 {#          <a href="{% url 'jobs:update' job.id %}" class="material-icons mdc-toolbar__icon" aria-label="Edit" alt="Edit">mode_edit</a>#}
 {#          <a href="{% url 'jobs:delete' job.id %}" class="material-icons mdc-toolbar__icon" aria-label="Delete" alt="Delete">delete</a>#}
@@ -9,21 +9,21 @@
 {% block content %}
     <div class="job-card job-card-more mdc-card">
         <div class="mdc-card__media">
-            <h2 class="mdc-card__title mdc-card__title--large"> {{ job.company }} </h2>
+            <h2 class="mdc-card__title mdc-card__title--large"> {{ job.company }} {{ job.job_position }} </h2>
         </div>
         <div class="mdc-card__supporting-text">
             <p>
                 <span class="job-prop"> <i class="material-icons">pin_drop</i> {{ job.location }} </span>
-                <span class="job-prop"> <i class="material-icons">work</i> {{ job.job_position }} </span>
+                <span class="job-prop"> <i class="material-icons">perm_contact_calendar</i> {{ job.get_type_display }} </span>
                 <span class="job-prop"> <i class="material-icons">domain</i> {{ job.department }} </span>
-            </p>
+                <span class="job-prop"> <i class="material-icons">payment</i> {{ job.salary }} </span></p>
             <p>
-                <span class="job-prop"> <i class="material-icons">remove_red_eye</i> 已被查看 {{ job.times_viewed}} 次 </span>
+                <span class="job-prop"> <i class="material-icons">remove_red_eye</i> 已被查看 {{ job.times_viewed }} 次 </span>
             </p>
             <p>
                 <span class="job-prop"> <i class="material-icons">schedule</i>
-                    由 {{ job.get_publisher_grad_year }} 届 {{ job.get_publisher_grad_class }} 班
-                    {{ job.publisher }} 发布于 {{ job.date_published.date }} </span>
+                    由 {{ job.get_publisher_grad_year }}届{{ job.get_publisher_grad_class }}班{{ job.publisher }} 发布于 {{ job.date_published.date }}
+                </span>
             </p>
         </div>
     </div>
@@ -81,5 +81,5 @@
             </div>
         </div>
     {% endif %}
-
 {% endblock %}
+

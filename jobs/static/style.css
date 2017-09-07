@@ -1,3 +1,7 @@
+:root {
+
+}
+
 body {
     background: #E0E0E0;
 }
@@ -188,4 +192,12 @@ body {
         margin-right: 15px;
         margin-bottom: 15px;
     }
+}
+
+.mdc-snackbar__text {
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
+}
+
+.mdc-snackbar__action-button {
+    font-family: "Roboto", "Open Sans", "Microsoft Yahei", sans-serif;
 }

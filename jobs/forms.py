@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django.forms.widgets import Input, Textarea, RadioSelect
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _
 from jobs.models import Job
 
 
@@ -48,6 +48,6 @@ class JobForm(ModelForm):
             'salary': _('薪资'),
             'submitting_resume': _('简历投递方式'),
             'description': _('工作描述'),
-            'requirements': _('工作要求'),
+            'requirements': _('招聘要求'),
             'company_description': _('单位介绍'),
         }

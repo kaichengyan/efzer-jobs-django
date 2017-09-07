@@ -1,8 +1,8 @@
 {% extends 'jobs/base.html' %}
-
+{% load i18n %}
 {% block toolbar %}
     <a href="{% url 'jobs:add' %}" class="material-icons mdc-toolbar__icon" aria-label="Add" alt="Add">add</a>
-    <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Search" alt="Search">search</a>
+    <a id="menu-search" href="#" class="material-icons mdc-toolbar__icon" aria-label="Search" alt="Search">search</a>
 {% endblock %}
 
 
@@ -36,7 +36,7 @@
     {% else %}
         <div class="no-job-card mdc-card">
             <div class="mdc-card__primary">
-                <h2 class="mdc-card__title mdc-card__title--large"> 暂无招聘信息。 </h2>
+                <h2 class="mdc-card__title mdc-card__title--large"> {% trans "暂无招聘信息。" %} </h2>
             </div>
         </div>
     {% endif %}
@@ -46,10 +46,43 @@
 {#        </span>#}
 {#    </button>#}
 
-    {% if snackbar_message %}
-        <div id="mdc-js-snackbar" class="mdc-snackbar demo-hidden mdc-snackbar--active" aria-live="assertive" aria-atomic="true">
-            <div class="mdc-snackbar__text">{{ snackbar_message }}</div>
+    <div id="mdc-js-snackbar" class="mdc-snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+        <div class="mdc-snackbar__text">Message</div>
+        <div class="mdc-snackbar__action-wrapper">
+            <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
         </div>
-    {% endif %}
+    </div>
 
+    {% for message in messages %}
+        <div id="add-success-message-snackbar" class="mdc-snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+            <div class="mdc-snackbar__text">{{ message }}</div>
+            <div class="mdc-snackbar__action-wrapper">
+                <button type="button" class="mdc-button mdc-snackbar__action-button">OK</button>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block script %}
+<script>
+      (function(global) {
+          'use strict';
+          var MDCSnackbar = global.mdc.snackbar.MDCSnackbar;
+          var messageSnackbar = document.getElementById('add-success-message-snackbar');
+          if (messageSnackbar) {
+              var snackbar = new MDCSnackbar(messageSnackbar);
+              snackbar.show({
+                  message: "添加成功，等待审核。",
+                  actionOnBottom: false,
+                  multiline: false,
+                  actionText: "快点",
+                  timeout: 2000,
+                  actionHandler: function () {
+                      console.log("知道嘞，别催")
+                  }
+              });
+          }
+      })(this);
+</script>
 {% endblock %}
