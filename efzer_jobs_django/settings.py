@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 from django.utils.translation import ugettext_lazy as _
+from .secrets import SECRET_KEY as IMPORTED_SECRET_KEY
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -21,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x%ppjj)_zg$i$wjps($!=#f0!!&5k+0*z5*s3s(nn20kc+c8&7'
+SECRET_KEY = IMPORTED_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
