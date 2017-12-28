@@ -122,7 +122,7 @@ USE_L10N = True
 USE_TZ = True
 
 LANGUAGES = [
-    ('zh-hans', _('简体中文'))
+    ('zh-hans', _('Simplified Chinese'))
 ]
 
 # Static files (CSS, JavaScript, Images)
